@@ -15,22 +15,30 @@ cloud.init({
  * event 参数包含小程序端调用传入的 data
  * 
  */
-exports.main = (event, context) => {
-  console.log(event)
-  console.log(context)
-
-  // 可执行其他自定义逻辑
-  // console.log 的内容可以在云开发云函数调用日志查看
-
-  // 获取 WX Context (微信调用上下文)，包括 OPENID、APPID、及 UNIONID（需满足 UNIONID 获取条件）等信息
-  const wxContext = cloud.getWXContext()
-
-  return {
-    event,
-    openid: wxContext.OPENID,
-    appid: wxContext.APPID,
-    unionid: wxContext.UNIONID,
-    env: wxContext.ENV,
-  }
+exports.main = async (event, context) => {
+	const db = cloud.database()
+	// collection 上的 get 方法会返回一个 Promise，因此云函数会在数据库异步取完数据后返回结
+	const result = await db.collection('vote').get()
+	debugger
+	console.log(`result.data${JSON.stringify(result.data)}`)
+	// event.params ['0101']
+	// result.data[0] = {'0101': 0, 'id': 01}
+	for (let i = 0; i < event.params.length; i ++) {
+		for (let key in result.data[0]) {
+			console.log(`key${i}is${key}`)
+			if (key === event.params[i]) {
+				if (typeof result.data[0][key] !== 'number') {
+					result.data[0][key] = 0
+				}
+				result.data[0][key] ++
+			}
+		}
+	}
+	debugger
+	// console.log(`result.data${JSON.stringify(result.data)}`)
+	// const update = await db.collection('vote').update({
+	// 	data: [result.data[0]]
+	// })
+	// console.log(update.data)
 }
 
