@@ -1,15 +1,29 @@
 <!--index.wxml-->
 <view class="container">
   <view class="avator">
-    <view>选出你心中的杰伦TOP5 | 和好友一起分享 </view>
+    <image class="album" src="../../images/album1.JPG" mode="scaleToFill" lazy-load="false" binderror="" bindload="">
+      <view class="share">选出你心中的杰伦TOP5 | 和好友一起分享 </view>
     <view>
     实时TOP{{index}}
     </view>
     <view>
     {{result[index]}}
     </view>
-  </view>
-  <view class="">
+    </image>
     
+  </view>
+  <view class="selector">
+  <view class="yourChoice" hover-class="none" hover-stop-propagation="false">
+    你的选择
+  </view>
+    <view class="selectPic" hover-class="none" hover-stop-propagation="false">
+      
+    </view>
+    <view class="songName" hover-class="none" hover-stop-propagation="false" >
+      <picker class="" mode="selector" range="{{songList}}" range-key="0" value="{{index}}" 
+        disabled="false" bindchange="" bindcancel="">
+        
+      </picker>
+    </view>
   </view>
 </view>
