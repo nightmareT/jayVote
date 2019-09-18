@@ -18,12 +18,11 @@ Page({
       return
     }
     wx.cloud.callFunction({
-      name: 'login',
-      data: {
-        params: ['0101', '0202', '0303']
-      }
+      name: 'getVoteResult',
+      data: {}
     }).then((res) => {
-      console.log(res)
+      debugger
+      this.sortVoteResult(res.result)
     })
   },
 
@@ -57,55 +56,26 @@ Page({
       }
     })
   },
-
-  // 上传图片
-  doUpload: function () {
-    // 选择图片
-    wx.chooseImage({
-      count: 1,
-      sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
-      success: function (res) {
-
-        wx.showLoading({
-          title: '上传中',
-        })
-
-        const filePath = res.tempFilePaths[0]
-        
-        // 上传图片
-        const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
-        wx.cloud.uploadFile({
-          cloudPath,
-          filePath,
-          success: res => {
-            console.log('[上传文件] 成功：', res)
-
-            app.globalData.fileID = res.fileID
-            app.globalData.cloudPath = cloudPath
-            app.globalData.imagePath = filePath
-            
-            wx.navigateTo({
-              url: '../storageConsole/storageConsole'
-            })
-          },
-          fail: e => {
-            console.error('[上传文件] 失败：', e)
-            wx.showToast({
-              icon: 'none',
-              title: '上传失败',
-            })
-          },
-          complete: () => {
-            wx.hideLoading()
-          }
-        })
-
-      },
-      fail: e => {
-        console.error(e)
+  sortVoteResult: function(voteResult) {
+    const arr = []
+    const compare = function(desc) {
+      return function ( a, b ) {
+        const value1 = a[Object.keys(a)[0]]
+        const value2 = b[Object.keys(b)[0]]
+        if ( desc == true ) {
+          return value1 - value2
+        } else {
+          return value2 - value1;
+        }
       }
+    }
+    Object.keys(voteResult).forEach((key) => {
+      let obj = {}
+      obj[key] = voteResult[key]
+      arr.push(obj)
     })
-  },
-
+    arr.sort(compare(false))
+    console.log(`sort result${arr}`)
+    debugger
+  }
 })
