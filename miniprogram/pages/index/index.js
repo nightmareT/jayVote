@@ -17,12 +17,28 @@ Page({
       })
       return
     }
+    this.vote(['0101', '0201', '0301'])
     wx.cloud.callFunction({
       name: 'getVoteResult',
       data: {}
     }).then((res) => {
       debugger
-      this.sortVoteResult(res.result)
+      if (res.result.hasOwnProperty('userInfo')) {
+        console.log('quert failed')
+      }
+      const result = {'0101': 5, '0210': 3, '0102': 4, '0105': 1, '0106': 3}
+      const sortResult = this.sortVoteResult(result)
+    })
+  },
+
+  vote: function(arr) {
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {
+        params: arr
+      }
+    }).then((res) => {
+      console.log(res)
     })
   },
 
@@ -75,7 +91,6 @@ Page({
       arr.push(obj)
     })
     arr.sort(compare(false))
-    console.log(`sort result${arr}`)
-    debugger
+    return arr
   }
 })
