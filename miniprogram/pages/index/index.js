@@ -20,7 +20,7 @@ Page({
     wx.cloud.callFunction({
       name: 'login',
       data: {
-        params: ['0101', '0202']
+        params: ['0101', '0202', '0303']
       }
     }).then((res) => {
       console.log(res)
