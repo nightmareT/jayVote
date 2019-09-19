@@ -3,27 +3,21 @@
   <view class="avator">
     <image class="album" src="../../images/album1.JPG" mode="scaleToFill" lazy-load="false" binderror="" bindload="">
       <view class="share">选出你心中的杰伦TOP5 | 和好友一起分享 </view>
-    <view>
-    实时TOP{{index}}
-    </view>
-    <view>
-    {{result[index]}}
-    </view>
+      <view class="topDes">实时TOP{{index}}</view>
+      <view class="topSongName">龙卷风</view>
     </image>
-    
   </view>
-  <view class="selector">
-  <view class="yourChoice" hover-class="none" hover-stop-propagation="false">
-    你的选择
-  </view>
-    <view class="selectPic" hover-class="none" hover-stop-propagation="false">
-      
+  <image class="selector" src="../../images/background.jpg" mode="scaleToFill" >
+    <view class="yourChoice" hover-class="none" hover-stop-propagation="false">
+      你的选择
     </view>
-    <view class="songName" hover-class="none" hover-stop-propagation="false" >
-      <picker class="" mode="selector" range="{{songList}}" range-key="0" value="{{index}}" 
-        disabled="false" bindchange="" bindcancel="">
-        
-      </picker>
-    </view>
-  </view>
+    <image class="selectPic" src="../../images/album{{albumIndex}}.JPG" bindtap="showModal">
+    </image>
+    <picker bindchange="bindPickerChange" class="songName" mode="selector" range="{{songList}}" value="{{songIndex}}" >
+      <view class="picker">
+        {{songList[songIndex]}}
+      </view>
+    </picker>
+    <image class="more" src="../../images/dropDown.png"></image>
+  </image>
 </view>

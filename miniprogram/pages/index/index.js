@@ -7,7 +7,11 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    albumIndex: 1,
+    showVoteModal: false,
+    songList: ['娘子', '可爱女人'],
+    songIndex: 0,
   },
 
   onLoad: function() {
@@ -29,6 +33,18 @@ Page({
       const result = {'0101': 5, '0210': 3, '0102': 4, '0105': 1, '0106': 3}
       const sortResult = this.sortVoteResult(result)
     })
+  },
+
+  bindPickerChange: function(e) {
+    console.log(e.detail.value)
+    this.setData({
+      songIndex: e.detail.value
+    })
+  },
+
+  showModal: function() {
+    console.log(this.showVoteModal)
+    this.showVoteModal = true
   },
 
   vote: function(arr) {

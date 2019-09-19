@@ -40,3 +40,79 @@
   color: white;
   /* transform: translateX(-50%) */
 }
+
+.topDes {
+  position: absolute;
+  /* text-align: center; */
+  left: 50%;
+  top: 140rpx;
+  transform: translateX(-50%);
+  font-size: 30px;
+  color: white;
+}
+
+.topSongName {
+  position: absolute;
+  /* text-align: center; */
+  left: 50%;
+  top: 240rpx;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: white;
+}
+
+.selector {
+  width: 100%
+}
+
+.yourChoice {
+  position: absolute;
+  /* text-align: center; */
+  left: 50%;
+  bottom: 260rpx;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+}
+
+.selectPic {
+  position: absolute;
+  /* text-align: center; */
+  left: 52rpx;
+  bottom: 52rpx;
+  width: 208rpx;
+  height: 220rpx;
+}
+
+.songName {
+  position: absolute;
+  /* text-align: center; */
+  right: 120rpx;
+  bottom: 160rpx;
+  font-size: 18px;
+  color: white;
+  width: 208rpx;
+  height: 30rpx;
+}
+
+.more {
+  position: absolute;
+  left: 50%;
+  bottom: 20rpx;
+  height: 50rpx;
+  width: 50rpx;
+  animation: mymove 2s infinite;
+  transform: translateX(-50%);
+}
+
+@keyframes mymove {
+  from {
+    bottom: 20rpx;
+    opacity: 100%;
+  }
+  to {
+    bottom: 0rpx;
+    opacity: 30%;
+  }
+}
