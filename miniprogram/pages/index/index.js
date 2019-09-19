@@ -1,4 +1,5 @@
 //index.js
+import songListArrImport from './songList.js'
 const app = getApp()
 
 Page({
@@ -10,7 +11,10 @@ Page({
     requestResult: '',
     albumIndex: 1,
     showVoteModal: false,
-    songList: ['娘子', '可爱女人'],
+    songListArr: [],
+    albumList: ['JAY', '范特西', '八度空间', '叶惠美', '七里香', '十一月的肖邦',
+    '依然范特西', '我很忙', '魔杰座', '跨时代', '惊叹号', '十二新作', '哎哟，不错哦',
+    '周杰伦的床边故事', '其他单曲'],
     songIndex: 0,
   },
 
@@ -21,6 +25,10 @@ Page({
       })
       return
     }
+    console.log(songListArrImport)
+    this.setData({
+      songListArr: songListArrImport
+    })
     // this.vote(['0101', '0201', '0301'])
     // wx.cloud.callFunction({
     //   name: 'getVoteResult',

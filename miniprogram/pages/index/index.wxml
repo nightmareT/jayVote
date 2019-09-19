@@ -11,11 +11,12 @@
     <view class="yourChoice" hover-class="none" hover-stop-propagation="false">
       你的选择
     </view>
-    <image class="selectPic" src="../../images/album{{albumIndex}}.JPG" bindtap="showModal">
+    <image class="selectPic" src="../../images/album{{albumIndex}}.JPG"   bindtap="showModal">
     </image>
-    <picker bindchange="bindPickerChange" class="songName" mode="selector" range="{{songList}}" value="{{songIndex}}" >
+    <view class="albumName">{{albumList[albumIndex - 1]}}</view>
+    <picker bindchange="bindPickerChange" class="songName" mode="selector" range="{{songListArr[albumIndex - 1]}}" value="{{songIndex}}" >
       <view class="picker">
-        {{songList[songIndex]}}
+        {{songListArr[albumIndex - 1][songIndex]}}
       </view>
     </picker>
     <image class="more" src="../../images/dropDown.png"></image>

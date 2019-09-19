@@ -29,7 +29,9 @@ Component({
     scrollTop: 0,
     scrollToMessage: '',
     hasKeyboard: false,
-    albumList: ['JAY', '范特西', '八度空间', '叶惠美', '七里香'],
+    albumList: ['JAY', '范特西', '八度空间', '叶惠美', '七里香', '十一月的肖邦',
+    '依然范特西', '我很忙', '魔杰座', '跨时代', '惊叹号', '十二新作', '哎哟，不错哦',
+    '周杰伦的床边故事', '其他单曲'],
     // albumSelectIndex: 0,
   },
 

@@ -71,7 +71,7 @@
   position: absolute;
   /* text-align: center; */
   left: 50%;
-  bottom: 260rpx;
+  bottom: 290rpx;
   transform: translateX(-50%);
   font-size: 18px;
   color: white;
@@ -82,9 +82,23 @@
   position: absolute;
   /* text-align: center; */
   left: 52rpx;
-  bottom: 52rpx;
+  bottom: 82rpx;
   width: 208rpx;
   height: 220rpx;
+}
+
+.albumName {
+  position: absolute;
+  /* text-align: center; */
+  background: rgba(19, 18, 18, 0.38);
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  line-height: 50rpx;
+  left: 52rpx;
+  bottom: 32rpx;
+  height: 50rpx;
+  width: 208rpx;
 }
 
 .songName {
