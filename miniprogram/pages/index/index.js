@@ -21,18 +21,17 @@ Page({
       })
       return
     }
-    this.vote(['0101', '0201', '0301'])
-    wx.cloud.callFunction({
-      name: 'getVoteResult',
-      data: {}
-    }).then((res) => {
-      debugger
-      if (res.result.hasOwnProperty('userInfo')) {
-        console.log('quert failed')
-      }
-      const result = {'0101': 5, '0210': 3, '0102': 4, '0105': 1, '0106': 3}
-      const sortResult = this.sortVoteResult(result)
-    })
+    // this.vote(['0101', '0201', '0301'])
+    // wx.cloud.callFunction({
+    //   name: 'getVoteResult',
+    //   data: {}
+    // }).then((res) => {
+    //   if (res.result.hasOwnProperty('userInfo')) {
+    //     console.log('quert failed')
+    //   }
+    //   const result = {'0101': 5, '0210': 3, '0102': 4, '0105': 1, '0106': 3}
+    //   const sortResult = this.sortVoteResult(result)
+    // })
   },
 
   bindPickerChange: function(e) {
@@ -44,7 +43,16 @@ Page({
 
   showModal: function() {
     console.log(this.showVoteModal)
-    this.showVoteModal = true
+    this.setData({
+      showVoteModal: true,
+    })
+  },
+
+  updateAlbum: function(event) {
+    console.log(`update albumIndex${event}`)
+    this.setData({
+      albumIndex: event.detail + 1,
+    })
   },
 
   vote: function(arr) {

@@ -20,4 +20,9 @@
     </picker>
     <image class="more" src="../../images/dropDown.png"></image>
   </image>
+  <albumSelect
+   showVoteModal="{{showVoteModal}}"
+   bindupdateAlbum="updateAlbum"
+  >
+  </albumSelect>
 </view>
