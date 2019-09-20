@@ -29,7 +29,7 @@ exports.main = async (event, context) => {
 				if (typeof result.data[0][key] !== 'number') {
 					result.data[0][key] = 0
 				}
-				result.data[0][key] += i + 1
+				result.data[0][key] += 1
 			}
 		}
 	}

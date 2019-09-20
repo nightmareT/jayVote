@@ -40,5 +40,5 @@
   color: white;
   text-align: center;
   line-height: 60rpx;
-  font-size: 18px;
+  font-size: 16px;
 }
