@@ -2,27 +2,19 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+  color: rgba(0, 0, 0, 0.5);
+  background: black;
   overflow: hidden;
 }
 
-.section {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.avator {
-  display: flex;
-  width: 750rpx;
-  height: 852rpx;
-}
-
-.album {
-  width: 100%;
-  height: 852rpx;
+.background {
+  width: 95%;
+  height: 95vh;
+  position: absolute;
+  top: 2.5vh
+  /* transform: translateY(-50%) */
 }
 
 .share {
@@ -33,11 +25,12 @@
   /* transform: translateX(-50%) */
 }
 
-.topDes {
+.logo {
   position: absolute;
   /* text-align: center; */
   left: 50%;
-  top: 140rpx;
+  top: 80rpx;
+  width: 280px;
   transform: translateX(-50%);
   font-size: 30px;
   color: white;
@@ -53,68 +46,25 @@
   color: white;
 }
 
-.selector {
-  width: 100%;
-  height: 354rpx;
-  overflow: hidden;
-}
 
-.yourChoice {
+.describe {
   position: absolute;
   /* text-align: center; */
   left: 50%;
   bottom: 290rpx;
   transform: translateX(-50%);
-  font-size: 18px;
-  color: white;
-  font-weight: bold;
+  height: 18px;
 }
 
-.selectPic {
-  position: absolute;
-  /* text-align: center; */
-  left: 52rpx;
-  bottom: 82rpx;
-  width: 208rpx;
-  height: 220rpx;
-}
-
-.albumName {
-  position: absolute;
-  /* text-align: center; */
-  background: rgba(19, 18, 18, 0.38);
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  line-height: 50rpx;
-  left: 52rpx;
-  bottom: 32rpx;
-  height: 50rpx;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 208rpx;
-}
-
-.songName {
-  position: absolute;
-  /* text-align: center; */
-  right: 120rpx;
-  bottom: 160rpx;
-  font-size: 18px;
-  color: white;
-  width: 260rpx;
-  height: 30rpx;
-}
 
 .more {
   position: absolute;
-  bottom: 50%;
+  bottom: 40%;
   right: 20rpx;
   height: 100rpx;
   width: 50rpx;
   animation: mymove 4s ease-in-out infinite;
-  transform: translateY(-50%);
+  transform: translateY(-30%);
 }
 
 @keyframes mymove {
