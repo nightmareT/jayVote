@@ -19,7 +19,7 @@
         {{songListArr[albumIndex - 1][songIndex]}}
       </view>
     </picker>
-    <image class="more" src="../../images/rightArrow4.png" bindtap="nextPage"></image>
+    <image class="more" src="../../images/rightArrow5.png" bindtap="nextPage"></image>
   </image>
   <albumSelect
    showVoteModal="{{showVoteModal}}"

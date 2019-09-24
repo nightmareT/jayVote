@@ -23,24 +23,14 @@ Page({
     this.setData({
       songListArr: songListArrImport
     })
-    wx.cloud.callFunction({
-      name: 'getVoteResult',
-      data: {}
-    }).then((res) => {
-      if (res.result.hasOwnProperty('userInfo')) {
-        console.log('query voted data failed use static data instead')
-        res.result = {'0101': 5, '0210': 3, '0102': 4, '0105': 1, '0106': 3}
-      }
-      const sortResult = this.sortVoteResult(res.result)
-      this.reflectVotedData(sortResult)
-    })
+    this.reflectVotedData(wx.votedData, 4)
   },
 
-  reflectVotedData(sortResult) {
+  reflectVotedData(sortResult, pageNum) {
     // 排序后的数组index为4时是排名第5的歌曲信息 如{0102: 3}
-    const albumOrder = parseInt(Object.keys(sortResult[4])[0].substr(0, 2), 10)
+    const albumOrder = parseInt(Object.keys(sortResult[pageNum])[0].substr(0, 2), 10)
     this.setData({
-      topSongNameIndex: parseInt(Object.keys(sortResult[4])[0].substr(2, 2), 10),
+      topSongNameIndex: parseInt(Object.keys(sortResult[pageNum])[0].substr(2, 2), 10),
       topSongNameAlbumIndex: albumOrder
     })
   },
@@ -67,6 +57,11 @@ Page({
   },
 
   nextPage: function() {
+    const albumIndex = this.data.albumIndex - 1
+    const str = `${albumIndex.toString().padStart(2, '0')
+    }${this.data.songIndex.toString().padStart(2, '0')}`
+    console.log(`voteData in this page is${str}`)
+    wx.userVoteData.push(str)
     wx.navigateTo({
       url: '../top4/top4',
     })
@@ -85,27 +80,4 @@ Page({
   //     debugger
   //   })
   // },
-
-  sortVoteResult: function(voteResult) {
-    const arr = []
-    const compare = function(desc) {
-      return function ( a, b ) {
-        const value1 = a[Object.keys(a)[0]]
-        const value2 = b[Object.keys(b)[0]]
-        if ( desc == true ) {
-          return value1 - value2
-        } else {
-          return value2 - value1;
-        }
-      }
-    }
-    Object.keys(voteResult).forEach((key) => {
-      let obj = {}
-      obj[key] = voteResult[key]
-      arr.push(obj)
-    })
-    arr.sort(compare(false))
-    console.log(`voted data after sort${JSON.stringify(arr)}`)
-    return arr
-  }
 })

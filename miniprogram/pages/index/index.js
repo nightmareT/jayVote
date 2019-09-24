@@ -32,18 +32,17 @@ Page({
         res.result = {'0101': 5, '0210': 3, '0102': 4, '0105': 1, '0106': 3}
       }
       const sortResult = this.sortVoteResult(res.result)
-      this.reflectVotedData(sortResult)
+      wx.votedData = sortResult
+      wx.userVoteData = []
     })
   },
-
-  reflectVotedData(sortResult) {
-    // 排序后的数组index为4时是排名第5的歌曲信息 如{0102: 3}
-    const albumOrder = parseInt(Object.keys(sortResult[4])[0].substr(0, 2), 10)
-    this.setData({
-      topSongNameIndex: parseInt(Object.keys(sortResult[4])[0].substr(2, 2), 10),
-      topSongNameAlbumIndex: albumOrder
-    })
-  },
+  //   // 排序后的数组index为4时是排名第5的歌曲信息 如{0102: 3}
+  //   const albumOrder = parseInt(Object.keys(sortResult[4])[0].substr(0, 2), 10)
+  //   this.setData({
+  //     topSongNameIndex: parseInt(Object.keys(sortResult[4])[0].substr(2, 2), 10),
+  //     topSongNameAlbumIndex: albumOrder
+  //   })
+  // },
 
   bindPickerChange: function(e) {
     console.log(e.detail.value)
@@ -52,39 +51,11 @@ Page({
     })
   },
 
-  showModal: function() {
-    console.log(this.showVoteModal)
-    this.setData({
-      showVoteModal: true,
-    })
-  },
-
-  updateAlbum: function(event) {
-    console.log(`update albumIndex${event}`)
-    this.setData({
-      albumIndex: event.detail + 1,
-    })
-  },
-
   nextPage: function() {
     wx.navigateTo({
-      url: '../top4/top4',
+      url: '../top5/top5',
     })
   },
-
-
-  // 页面结束后的vote函数
-  // vote: function() {
-  //   wx.voteData = ['0103', '0201', '1009', '0903', '0901']
-  //   wx.cloud.callFunction({
-  //     name: 'login',
-  //     data: {
-  //       params: wx.voteData
-  //     }
-  //   }).then((res) => {
-  //     debugger
-  //   })
-  // },
 
   sortVoteResult: function(voteResult) {
     const arr = []
