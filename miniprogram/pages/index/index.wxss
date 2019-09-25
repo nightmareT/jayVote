@@ -59,15 +59,21 @@
   height: 18px;
 }
 
-
-.more {
+.moreButton {
   position: absolute;
   bottom: 30%;
   right: 20rpx;
   height: 200rpx;
+  width: 100rpx;
+  transform: translateY(-30%);
+}
+
+.more {
+  position: absolute;
+  right: 20rpx;
+  height: 200rpx;
   width: 50rpx;
   animation: mymove 4s ease-in-out infinite;
-  transform: translateY(-30%);
 }
 
 @keyframes mymove {

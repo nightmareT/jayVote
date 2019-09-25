@@ -6,6 +6,8 @@
       
     </image>
     <image class="describe" mode="scaleToFill"  src="../../images/describe.png"> </image>
-    <image class="more" src="../../images/rightArrow5.png" bindtap="nextPage"></image>
+    <view class="moreButton" bindtap="nextPage">
+      <image class="more" src="../../images/rightArrow5.png" ></image>
+    </view>
   </image>
 </view>
