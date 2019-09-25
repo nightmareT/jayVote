@@ -10,7 +10,7 @@
       <view class="">{{songList[1]}}</view>
       <view class="">{{songList[0]}}</view>
     </view>
-    <view class="vote" bindtap="vote" hover-class="none" hover-stop-propagation="false">
+    <view class="vote" bindtap="vote" wx:if="{{showVote}}">
       点击投票
     </view>
   </image>

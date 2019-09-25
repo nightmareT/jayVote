@@ -98,10 +98,10 @@
   font-size: 18px;
   color: white;
   text-align: center;
-  line-height: 62rpx;
+  line-height: 100rpx;
   border: 1px white solid;
   background: rgba(0, 0, 0, 0);
-  height: 62rpx;
+  height: 100rpx;
   /* animation: mymove 4s ease-in-out infinite; */
   transform: translateX(-50%);
 }

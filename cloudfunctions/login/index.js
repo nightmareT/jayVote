@@ -18,7 +18,11 @@ cloud.init({
 exports.main = async (event, context) => {
 	const db = cloud.database()
 	const result = await db.collection('vote').get()
+  if (typeof result.data[1].voteNum === 'number') {
+    result.data[1].voteNum ++
+  }
   delete result.data[0]._id
+  delete result.data[1]._id
 	for (let i = 0; i < event.params.length; i ++) {
     if (!result.data[0].hasOwnProperty(event.params[i])) {
 			result.data[0][event.params[i]] = 0
@@ -33,6 +37,9 @@ exports.main = async (event, context) => {
 			}
 		}
 	}
+  await db.collection('vote').doc('count').update({
+    data: result.data[1]
+  })
   const update = await db.collection('vote').doc('voteObj').update({
 		data: result.data[0]
 	})
