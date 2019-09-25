@@ -1,10 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/openapi/openapi",
-    "pages/im/im",
     "pages/top5/top5",
     "pages/top4/top4",
+    "pages/top3/top3",
+    "pages/top2/top2",
+    "pages/top1/top1",
     "pages/voteResult/voteResult"
   ],
   "window": {

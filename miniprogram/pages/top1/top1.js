@@ -13,6 +13,7 @@ Page({
     topSongNameAlbumIndex: -1,
     topSongNameIndex: wx.topSongNameIndex ? wx.topSongNameIndex : 0,
     songListArr: [],
+    pageIndex: 0,
     albumList: ['JAY', '范特西', '八度空间', '叶惠美', '七里香', '十一月的肖邦',
     '依然范特西', '我很忙', '魔杰座', '跨时代', '惊叹号', '十二新作', '哎哟，不错哦',
     '周杰伦的床边故事', '其他单曲'],
@@ -23,7 +24,7 @@ Page({
     this.setData({
       songListArr: songListArrImport
     })
-    this.reflectVotedData(wx.votedData, 4)
+    this.reflectVotedData(wx.votedData, this.data.pageIndex)
   },
 
   reflectVotedData(sortResult, pageNum) {
@@ -61,10 +62,10 @@ Page({
     const str = `${albumIndex.toString().padStart(2, '0')
     }${this.data.songIndex.toString().padStart(2, '0')}`
     console.log(`voteData in this page is${str}`)
-    wx.userVoteData[4] = str
-    wx.songList[4] = `${this.data.songListArr[albumIndex][this.data.songIndex]}`
+    wx.userVoteData[this.data.pageIndex] = str
+    wx.songList[this.data.pageIndex] = `${this.data.songListArr[albumIndex][this.data.songIndex]}`
     wx.navigateTo({
-      url: '../top4/top4',
+      url: '../voteResult/voteResult',
     })
   }
 })

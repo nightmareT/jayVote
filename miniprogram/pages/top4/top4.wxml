@@ -1,17 +1,17 @@
 <!--index.wxml-->
 <view class="container">
   <view class="avator">
-    <image class="album" src="../../images/album1.JPG" mode="scaleToFill" lazy-load="false" binderror="" bindload="">
+    <image class="album" src="../../images/album{{topSongNameAlbumIndex + 1}}.png" mode="scaleToFill" lazy-load="false" binderror="" bindload="">
       <view class="share">选出你心中的杰伦TOP5 | 和好友一起分享 </view>
-      <view class="topDes">实时TOP{{index}}</view>
-      <view class="topSongName">龙卷风</view>
+      <view class="topDes">实时TOP4</view>
+      <view class="topSongName">{{songListArr[topSongNameAlbumIndex][topSongNameIndex]}}</view>
     </image>
   </view>
-  <image class="selector" src="../../images/background.jpg" mode="scaleToFill" >
+  <image class="selector" src="../../images/jayBackground.png" mode="aspectFill" >
     <view class="yourChoice" hover-class="none" hover-stop-propagation="false">
       你的选择
     </view>
-    <image class="selectPic" src="../../images/album{{albumIndex}}.JPG"   bindtap="showModal">
+    <image class="selectPic" src="../../images/album{{albumIndex}}.png"   bindtap="showModal">
     </image>
     <view class="albumName">{{albumList[albumIndex - 1]}}</view>
     <picker bindchange="bindPickerChange" class="songName" mode="selector" range="{{songListArr[albumIndex - 1]}}" value="{{songIndex}}" >
@@ -19,7 +19,7 @@
         {{songListArr[albumIndex - 1][songIndex]}}
       </view>
     </picker>
-    <image class="more" src="../../images/dropDown.png"></image>
+    <image class="more" src="../../images/rightArrow5.png" bindtap="nextPage"></image>
   </image>
   <albumSelect
    showVoteModal="{{showVoteModal}}"

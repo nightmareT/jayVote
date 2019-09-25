@@ -1,7 +1,7 @@
 <view class="albumSelect" wx:if="{{showVoteModal}}">
   <view class='albumBlank'>
   <view wx:for="{{albumList}}" wx:key="{{index}}" class="album" data-index = "{{index}}" bindtap="confirmAlbum" >
-      <image class="albumPic" src="../../images/album{{index + 1}}.JPG" mode="scaleToFill">
+      <image class="albumPic" src="../../images/album{{index + 1}}.png" mode="scaleToFill">
       </image>
       <view class="albumName">
         {{item}}

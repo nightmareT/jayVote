@@ -2,42 +2,41 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+  height: 100vh;
+  font-family: 'Source Han Sans CN', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  background: black;
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-.section {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.avator {
+.background {
+  width: 95%;
+  height: 95vh;
+  position: absolute;
   display: flex;
-  width: 750rpx;
-  height: 852rpx;
-}
-
-.album {
-  width: 100%;
-  height: 852rpx;
+  flex-direction: column;
+  align-items: center;
+  top: 2.5vh
+  /* transform: translateY(-50%) */
 }
 
 .share {
-  position: absolute;
+  position: fixed;
   left: 10rpx;
   top: 10rpx;
-  color: white;
+  color: rgba(255, 255, 255, 0.7);
   /* transform: translateX(-50%) */
 }
 
-.topDes {
+.logo {
   position: absolute;
   /* text-align: center; */
   left: 50%;
-  top: 140rpx;
+  top: 80rpx;
+  width: 280px;
   transform: translateX(-50%);
   font-size: 30px;
   color: white;
@@ -53,68 +52,58 @@
   color: white;
 }
 
-.selector {
-  width: 100%;
-  height: 354rpx;
-  overflow: hidden;
-}
 
-.yourChoice {
+.describe {
   position: absolute;
   /* text-align: center; */
   left: 50%;
   bottom: 290rpx;
   transform: translateX(-50%);
-  font-size: 18px;
-  color: white;
-  font-weight: bold;
-}
-
-.selectPic {
-  position: absolute;
-  /* text-align: center; */
-  left: 52rpx;
-  bottom: 82rpx;
-  width: 208rpx;
-  height: 220rpx;
-}
-
-.albumName {
-  position: absolute;
-  /* text-align: center; */
-  background: rgba(19, 18, 18, 0.38);
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  line-height: 50rpx;
-  left: 52rpx;
-  bottom: 32rpx;
-  height: 50rpx;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 208rpx;
+  height: 18px;
 }
 
 .songName {
   position: absolute;
   /* text-align: center; */
-  right: 120rpx;
-  bottom: 160rpx;
+  left: 50%;
+  top: 100rpx;
+  transform: translateX(-50%);
   font-size: 18px;
+  width: 400rpx;
   color: white;
-  width: 260rpx;
-  height: 30rpx;
 }
 
-.more {
+.songName1 {
   position: absolute;
-  bottom: 50%;
-  right: 20rpx;
-  height: 100rpx;
-  width: 50rpx;
-  animation: mymove 4s ease-in-out infinite;
-  transform: translateY(-50%);
+  /* text-align: center; */
+  left: 50%;
+  top: 240rpx;
+  width: 400rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 48vh;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: white;
+}
+
+.vote {
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  width: 250rpx;
+  border-radius: 11px;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  line-height: 62rpx;
+  border: 1px white solid;
+  background: rgba(0, 0, 0, 0);
+  height: 62rpx;
+  /* animation: mymove 4s ease-in-out infinite; */
+  transform: translateX(-50%);
 }
 
 @keyframes mymove {

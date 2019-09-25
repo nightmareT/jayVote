@@ -1,5 +1,5 @@
 //index.js
-import songListArrImport from './songList.js'
+// import songListArrImport from '../songList.js'
 const app = getApp()
 
 Page({
@@ -20,9 +20,6 @@ Page({
   },
 
   onLoad: function() {
-    this.setData({
-      songListArr: songListArrImport
-    })
     wx.cloud.callFunction({
       name: 'getVoteResult',
       data: {}
@@ -33,7 +30,8 @@ Page({
       }
       const sortResult = this.sortVoteResult(res.result)
       wx.votedData = sortResult
-      wx.userVoteData = []
+      wx.userVoteData = ['', '', '', '', '']
+      wx.songList = ['', '', '', '', '']
     })
   },
   //   // 排序后的数组index为4时是排名第5的歌曲信息 如{0102: 3}

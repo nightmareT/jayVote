@@ -3,7 +3,7 @@
   <view class="avator">
     <image class="album" src="../../images/album{{topSongNameAlbumIndex + 1}}.png" mode="scaleToFill" lazy-load="false" binderror="" bindload="">
       <view class="share">选出你心中的杰伦TOP5 | 和好友一起分享 </view>
-      <view class="topDes">实时TOP5</view>
+      <view class="topDes">实时TOP3</view>
       <view class="topSongName">{{songListArr[topSongNameAlbumIndex][topSongNameIndex]}}</view>
     </image>
   </view>
