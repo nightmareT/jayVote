@@ -1,5 +1,4 @@
-//index.js
-// import songListArrImport from '../songList.js'
+import utils from '../../utils/index'
 const app = getApp()
 
 Page({
@@ -10,6 +9,8 @@ Page({
     requestResult: '',
     albumIndex: 1,
     showVoteModal: false,
+    touchx: 0,
+    touchy: 0,
     topSongNameAlbumIndex: -1,
     topSongNameIndex: wx.topSongNameIndex ? wx.topSongNameIndex : 0,
     songListArr: [],
@@ -47,6 +48,22 @@ Page({
     this.setData({
       songIndex: e.detail.value
     })
+  },
+
+  touchStart(e) {
+    // console.log(e)
+    this.setData({
+      touchx: e.changedTouches[0].clientX,
+      touchy: e.changedTouches[0].clientY
+    });
+  },
+
+  touchEnd(e) {
+    let x = e.changedTouches[0].clientX;
+    let y = e.changedTouches[0].clientY;
+    if (utils.getTouchData(x, y, this.data.touchx, this.data.touchy) === 'left' ) {
+      this.nextPage()
+    }
   },
 
   nextPage: function() {

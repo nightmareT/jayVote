@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container" bindtouchstart='touchStart' bindtouchend="touchEnd">
   <image class="background" src="../../images/jayBackground.png" mode="scaleToFill" lazy-load="false" binderror="" bindload="">
     <view class="share">选出你心中的杰伦TOP5 | 和好友一起分享 </view>
     <image class="logo" src="../../images/LOGO.png" mode="widthFix" bindload="">
