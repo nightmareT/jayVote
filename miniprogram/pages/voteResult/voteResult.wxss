@@ -63,15 +63,16 @@
 }
 
 .songName {
-  position: absolute;
-  /* text-align: center; */
-  left: 50%;
-  top: 100rpx;
-  transform: translateX(-50%);
-  font-size: 18px;
-  width: 400rpx;
-  color: white;
-}
+    position: absolute;
+    text-align: center;
+    top: 100rpx;
+    font-size: 18px;
+    width: 100%;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
 
 .songName1 {
   position: absolute;
