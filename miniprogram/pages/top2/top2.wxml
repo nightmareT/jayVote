@@ -21,9 +21,9 @@
     </picker>
     <image class="more" src="../../images/rightArrow5.png" bindtap="nextPage"></image>
   </image>
-  <albumSelect
+</view>
+<albumSelect
    showVoteModal="{{showVoteModal}}"
    bindupdateAlbum="updateAlbum"
   >
   </albumSelect>
-</view>
