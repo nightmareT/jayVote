@@ -31,7 +31,9 @@ Page({
       }
       const sortResult = this.sortVoteResult(res.result)
       wx.votedData = sortResult
-      wx.userVoteData = ['', '', '', '', '']
+      if (!wx.userVoteData) {
+        wx.userVoteData = ['', '', '', '', '']
+      }
       wx.songList = ['', '', '', '', '']
     })
   },

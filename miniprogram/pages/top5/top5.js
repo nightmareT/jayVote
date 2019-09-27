@@ -50,7 +50,9 @@ Page({
     const albumOrder = parseInt(Object.keys(sortResult[pageNum])[0].substr(0, 2), 10)
     this.setData({
       topSongNameIndex: parseInt(Object.keys(sortResult[pageNum])[0].substr(2, 2), 10),
-      topSongNameAlbumIndex: albumOrder
+      topSongNameAlbumIndex: albumOrder,
+      albumIndex: wx.userVoteData && wx.userVoteData[pageNum] ? (parseInt(wx.userVoteData[pageNum].substr(0, 2), 10) + 1) : 1,
+      songIndex: wx.userVoteData && wx.userVoteData[pageNum] ? parseInt(wx.userVoteData[pageNum].substr(2, 2), 10): 0,
     })
   },
 
