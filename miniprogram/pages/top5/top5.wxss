@@ -6,6 +6,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   position: fixed;
+  z-index: -1;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -77,10 +78,11 @@
 }
 
 .selectPic {
-  position: absolute;
+  position: fixed;
   /* text-align: center; */
   left: 52rpx;
   bottom: 82rpx;
+  z-index: 1000;
   width: 208rpx;
   height: 220rpx;
 }
@@ -103,7 +105,8 @@
 }
 
 .songName {
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
   /* text-align: center; */
   right: 120rpx;
   bottom: 160rpx;

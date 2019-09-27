@@ -1,0 +1,34 @@
+.userGuide {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.85);
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.pos {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 30vh;
+}
+
+.guide1 {
+  height: 120rpx;
+  width: 100%
+}
+
+.guide2 {
+  height: 120rpx;
+  width: 100%
+}
+
+.confirm {
+  height: 160rpx;
+  width: 350rpx
+}

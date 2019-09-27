@@ -11,6 +11,7 @@ Page({
     requestResult: '',
     albumIndex: 1,
     showVoteModal: false,
+    showGuide: false,
     touchx: 0,
     touchy: 0,
     topSongNameAlbumIndex: -1,
@@ -26,7 +27,20 @@ Page({
     this.setData({
       songListArr: songListArrImport
     })
+    if (wx.inited) {
+      this.setData({
+        showGuide: false
+      })
+    } else {
+      this.setData({
+        showGuide: true
+      })
+    }
     this.reflectVotedData(wx.votedData, 4)
+  },
+
+  guideConfirm() {
+    wx.inited = true
   },
 
   touchStart(e) {

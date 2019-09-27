@@ -1,0 +1,11 @@
+<view class="userGuide" wx:if="{{showGuide}}">
+  <view class="pos" hover-class="none" hover-stop-propagation="false">
+    <image class="guide1" src="../../images/guide1.png" mode="aspectFill">
+  </image>
+  <image class="guide2" src="../../images/guide2.png" mode="aspectFill">
+  </image>
+  <image class="confirm" src="../../images/confirm.png" mode="aspectFill" bindtap="confirm">
+  </image>
+  </view>
+</view>
+

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "albumSelect": "/components/albumSelect/albumSelect"
+    "albumSelect": "/components/albumSelect/albumSelect",
+    "userGuide": "/components/userGuide/userGuide"
   }
 }
