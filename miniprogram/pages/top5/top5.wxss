@@ -85,13 +85,18 @@
   z-index: 1000;
   width: 208rpx;
   height: 220rpx;
+  /* border: 1px solid white;
+  border-bottom: 0; */
 }
 
 .albumName {
-  position: absolute;
+  position: fixed;
   /* text-align: center; */
   background: rgba(19, 18, 18, 0.38);
   color: white;
+  z-index: 1000;
+  /* border: 1px solid white;
+  border-top: 0; */
   font-size: 16px;
   text-align: center;
   line-height: 50rpx;
