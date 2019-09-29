@@ -20,7 +20,7 @@
 
 .guide1 {
   height: 120rpx;
-  width: 100%
+  width: 90%
 }
 
 .guide2 {

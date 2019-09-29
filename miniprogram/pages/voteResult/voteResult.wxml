@@ -4,11 +4,11 @@
     <view class="share">选出你心中的杰伦TOP5 | 和好友一起分享 </view>
     <view class="songName">你心中的五首JAY CHOU</view>
     <view class="songName1" hover-class="none" hover-stop-propagation="false">
-      <view class="">{{songList[4]}}</view>
-      <view class="">{{songList[3]}}</view>
-      <view class="">{{songList[2]}}</view>
-      <view class="">{{songList[1]}}</view>
       <view class="">{{songList[0]}}</view>
+      <view class="">{{songList[1]}}</view>
+      <view class="">{{songList[2]}}</view>
+      <view class="">{{songList[3]}}</view>
+      <view class="">{{songList[4]}}</view>
     </view>
     <view class="vote" bindtap="vote" wx:if="{{showVote}}">
       点击投票
